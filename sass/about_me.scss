@@ -1,0 +1,84 @@
+@import 'global', 'vars';
+
+.profile{
+  display: grid;
+  grid-template-areas: 
+  "profile-desc profile-desc"
+  "music games";
+  gap: $grid-gap;
+  text-align: center;
+}
+
+.profile-desc{
+  grid-area: profile-desc;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  padding: 10px 0;
+  width: 400px + $grid-gap + 5;
+  height: auto;
+  
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  border: solid black;
+  box-shadow: black 3px 3px 6px 1px;
+  border-radius: 5px;
+  
+  >p{
+    margin: 5px;
+    font-size: large;
+  }
+
+  hr{
+    margin: 2em 15%;
+    border: solid black 2px;
+  }
+  
+  >hr:nth-child(2){
+    margin: 0em 15%;
+    margin-bottom: 2em;
+  }
+}
+
+.profile-img{
+  user-select: none;
+  margin: 5px 0;
+  
+  width: 120px;
+  height: 120px;
+
+  object-fit: cover;
+  border-radius: 60px;
+  border: 3px solid black;
+}
+
+.social-links{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.hobby{
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  border: solid black;
+  border-radius: 5px;
+  box-shadow: black 3px 3px 6px 1px;
+  transition: 0.1s all;
+}
+
+.hobby:active{
+  box-shadow: black 1px 1px 1px 0px;
+  transform: translate(3px, 3px);
+}
+
+.hobby-desc{
+  font-weight: bold;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  position: absolute;
+  color: white;
+  bottom: 5%;
+  left: 5%;
+}

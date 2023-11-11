@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+p, a, h2 {
+  color: white;
+  text-decoration: none;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: radial-gradient(at center top, #891617, rgba(0, 0, 0, 0)), radial-gradient(at center bottom, #680a7f, rgba(0, 0, 0, 0));
+  background-color: black;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile {
+  display: grid;
+  grid-template-areas: "profile-desc profile-desc" "music games";
+  gap: 10px;
+  text-align: center;
+}
+
+.profile-desc {
+  grid-area: profile-desc;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  padding: 10px 0;
+  width: 415px;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid black;
+  box-shadow: black 3px 3px 6px 1px;
+  border-radius: 5px;
+}
+.profile-desc > p {
+  margin: 5px;
+  font-size: large;
+}
+.profile-desc hr {
+  margin: 2em 15%;
+  border: solid black 2px;
+}
+.profile-desc > hr:nth-child(2) {
+  margin: 0em 15%;
+  margin-bottom: 2em;
+}
+
+.profile-img {
+  user-select: none;
+  margin: 5px 0;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 60px;
+  border: 3px solid black;
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.hobby {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: solid black;
+  border-radius: 5px;
+  box-shadow: black 3px 3px 6px 1px;
+  transition: 0.1s all;
+}
+
+.hobby:active {
+  box-shadow: black 1px 1px 1px 0px;
+  transform: translate(3px, 3px);
+}
+
+.hobby-desc {
+  font-weight: bold;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  position: absolute;
+  color: white;
+  bottom: 5%;
+  left: 5%;
+}/*# sourceMappingURL=about_me.css.map */
