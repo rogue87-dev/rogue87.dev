@@ -7,7 +7,7 @@ Still working on it.
 Progress:
 <center>
 
-    N = No     M = Maybe    Y = Yes
+N = No     M = Maybe    Y = Yes
 
 
 | page\feature | Functional | Animates | Responsive |
