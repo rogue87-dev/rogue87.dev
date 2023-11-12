@@ -1,47 +1,31 @@
 @import 'global', 'vars';
 
-#welcome-msg{
-  cursor: pointer;
-  text-align: center;
-  font-size: larger;
-  user-select: none;
-  margin-bottom: 10px;
-  padding: 10px 0;
-  width: (($grid-elem-w * 2) + $grid-gap + 7); // 7 is a constant and shall not be changed.
-
-  color: white;
-  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
-  font-weight: bold;
-
-  background-color: rgba($color: #000000, $alpha: 0.3);
-  border: solid black;
-  border-radius: 5px;
-  box-shadow: black 3px 3px 6px 1px;
-  transition: 0.1s all;
-}
-
-#welcome-msg:active{
-  box-shadow: black 1px 1px 1px 0px;
-  transform: translate(3px, 3px);
-}
-
-#options-grid{
+#grid-container{
   display: grid;
+  grid-template-columns: repeat(2, 265px);
+  grid-template-rows: minmax(40px, auto) repeat(2, 220px);
+  //god. why didn't I use template rows and columns? I'm so stupid lmao.
   grid-template-areas:
+  "welcome-msg welcome-msg"
   "about-me-elem journal-elem"
   "portfolio-elem portfolio-elem";
-  gap: $grid-gap;
+  gap: 10px;
+
+  >.grid-elem:first-child{
+    grid-area: welcome-msg;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    user-select: none;
+    overflow-wrap: anywhere;
+  }
   
-  >a:nth-child(3){
+  >.grid-elem:last-child{
     grid-area: portfolio-elem;
-
-    >.grid-elem{
-      height: $grid-elem-h;
-      width: (($grid-elem-w * 2) + $grid-gap + 7); // 7 is a constant and shall not be changed.
-
-      >.grid-desc{
-        left: ($grid-desc-pos-xy - 2%);
-      }
+    >.grid-desc{
+      left: ($pos-x-y - 2%);
     }
   }
 }
@@ -49,19 +33,23 @@
 .grid-elem{
   display: flex;
   position: relative;
-  height: $grid-elem-h;
-  width: $grid-elem-w;
   
   background-color: rgba($color: #000000, $alpha: 0.3);
   border: solid black;
   border-radius: 5px;
   box-shadow: black 3px 3px 6px 1px;
-  transition: 0.1s all;
+  
+  transition: 0.15s;
   
   >img{
     margin: auto;
-    width: 150px;
+    width: 125px;
   }
+}
+
+.grid-elem:hover{
+  box-shadow: black 5px 5px 10px 3px;
+  transform: translate(-2px, -2px);
 }
 
 .grid-elem:active{
@@ -71,10 +59,7 @@
 
 .grid-desc{
   position: absolute;
-  left: $grid-desc-pos-xy;
-  bottom: $grid-desc-pos-xy;
-
+  left: $pos-x-y;
+  bottom: $pos-x-y;
   font-size: larger;
-  font-weight: bold;
-  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;  // I know I can use webkit-text-stroke, but I prefer this
 }

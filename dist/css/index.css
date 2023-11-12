@@ -2,11 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap");
 * {
   font-family: "Roboto", sans-serif;
-}
-
-p, a, h2 {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
 }
 
 html, body {
@@ -28,59 +27,47 @@ body {
   transform: translate(-50%, -50%);
 }
 
-#welcome-msg {
-  cursor: pointer;
-  text-align: center;
-  font-size: larger;
-  user-select: none;
-  margin-bottom: 10px;
-  padding: 10px 0;
-  width: 537px;
-  color: white;
-  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
-  font-weight: bold;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: solid black;
-  border-radius: 5px;
-  box-shadow: black 3px 3px 6px 1px;
-  transition: 0.1s all;
-}
-
-#welcome-msg:active {
-  box-shadow: black 1px 1px 1px 0px;
-  transform: translate(3px, 3px);
-}
-
-#options-grid {
+#grid-container {
   display: grid;
-  grid-template-areas: "about-me-elem journal-elem" "portfolio-elem portfolio-elem";
+  grid-template-columns: repeat(2, 265px);
+  grid-template-rows: minmax(40px, auto) repeat(2, 220px);
+  grid-template-areas: "welcome-msg welcome-msg" "about-me-elem journal-elem" "portfolio-elem portfolio-elem";
   gap: 10px;
 }
-#options-grid > a:nth-child(3) {
+#grid-container > .grid-elem:first-child {
+  grid-area: welcome-msg;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  user-select: none;
+  overflow-wrap: anywhere;
+}
+#grid-container > .grid-elem:last-child {
   grid-area: portfolio-elem;
 }
-#options-grid > a:nth-child(3) > .grid-elem {
-  height: 220px;
-  width: 537px;
-}
-#options-grid > a:nth-child(3) > .grid-elem > .grid-desc {
+#grid-container > .grid-elem:last-child > .grid-desc {
   left: 3%;
 }
 
 .grid-elem {
   display: flex;
   position: relative;
-  height: 220px;
-  width: 260px;
   background-color: rgba(0, 0, 0, 0.3);
   border: solid black;
   border-radius: 5px;
   box-shadow: black 3px 3px 6px 1px;
-  transition: 0.1s all;
+  transition: 0.15s;
 }
 .grid-elem > img {
   margin: auto;
-  width: 150px;
+  width: 125px;
+}
+
+.grid-elem:hover {
+  box-shadow: black 5px 5px 10px 3px;
+  transform: translate(-2px, -2px);
 }
 
 .grid-elem:active {
@@ -93,6 +80,4 @@ body {
   left: 5%;
   bottom: 5%;
   font-size: larger;
-  font-weight: bold;
-  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
 }/*# sourceMappingURL=index.css.map */

@@ -5,10 +5,12 @@ This is the code for my personal website.
 Still working on it.
 
 Progress:
-<center>
 
-N = No     M = Maybe    Y = Yes
+N = No
 
+M = Maybe
+
+Y = Yes
 
 | page\feature | Functional | Animates | Responsive |
 | :----------: | :--------: | :------: | :--------: |
@@ -16,5 +18,3 @@ N = No     M = Maybe    Y = Yes
 |   About Me   |     M     |    N    |     N     |
 |   Journal   |     N     |    N    |     N     |
 |  Portfolio  |     N     |    N    |     N     |
-
-<center/>

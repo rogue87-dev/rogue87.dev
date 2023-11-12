@@ -2,11 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap");
 * {
   font-family: "Roboto", sans-serif;
-}
-
-p, a, h2 {
   color: white;
   text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
 }
 
 html, body {
@@ -28,19 +27,18 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.profile {
+#profile-container {
   display: grid;
-  grid-template-areas: "profile-desc profile-desc" "music games";
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 460px 100px;
   gap: 10px;
+  grid-template-areas: "profile-desc profile-desc" "music games";
   text-align: center;
 }
 
 .profile-desc {
   grid-area: profile-desc;
   text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
-  padding: 10px 0;
-  width: 415px;
-  height: auto;
   background-color: rgba(0, 0, 0, 0.3);
   border: solid black;
   box-shadow: black 3px 3px 6px 1px;
@@ -75,18 +73,21 @@ body {
 }
 
 .hobby {
-  display: flex;
   cursor: pointer;
+  display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  width: 200px;
-  height: 100px;
   background-color: rgba(0, 0, 0, 0.3);
   border: solid black;
   border-radius: 5px;
   box-shadow: black 3px 3px 6px 1px;
-  transition: 0.1s all;
+  transition: 0.15s;
+}
+
+.hobby:hover {
+  box-shadow: black 5px 5px 10px 3px;
+  transform: translate(-2px, -2px);
 }
 
 .hobby:active {
