@@ -2,7 +2,7 @@
 #profile-container {
   display: grid;
   grid-template-columns: 200px 200px;
-  grid-template-rows: 460px 100px;
+  grid-template-rows: auto 100px;
   gap: 10px;
   grid-template-areas: "profile-desc profile-desc" "music games";
   text-align: center;
@@ -10,7 +10,8 @@
 
 .profile-desc {
   grid-area: profile-desc;
-  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  display: flex;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.3);
   border: solid black;
   box-shadow: black 3px 3px 6px 1px;
@@ -20,28 +21,29 @@
   margin: 5px;
   font-size: large;
 }
-.profile-desc hr {
-  margin: 2em 15%;
+.profile-desc > hr {
+  margin: 1em 15%;
   border: solid black 2px;
 }
-.profile-desc > hr:nth-child(2) {
-  margin: 0em 15%;
-  margin-bottom: 2em;
+.profile-desc > h2 {
+  margin: 5px;
 }
 
 .profile-img {
+  align-self: center;
   user-select: none;
-  margin: 5px 0;
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 60px;
   border: 3px solid black;
+  margin-top: 0.5rem;
 }
 
-.social-links {
+.links {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 0.5rem;
 }
 
 .hobby {
@@ -74,4 +76,34 @@
   color: white;
   bottom: 5%;
   left: 5%;
+}
+
+@media ((320px <= width <= 450px) and (677px <= height <= 932px)) {
+  #profile-container {
+    grid-template-columns: repeat(2, 45vw);
+    grid-template-rows: auto 12vh;
+  }
+}
+@media ((320px <= height <= 450px) and (677px <= width <= 932px)) {
+  #profile-container {
+    grid-template-columns: repeat(2, 23vw);
+    grid-template-rows: auto 15vh;
+  }
+  .profile-img {
+    width: 10vw;
+    height: 10vw;
+  }
+  .profile-desc > p {
+    margin: 2px;
+    font-size: medium;
+  }
+  .profile-desc > hr {
+    margin: 2vh 15%;
+  }
+  .profile-desc > h2 {
+    margin: 0.1em 15%;
+  }
+  img {
+    width: 12vh;
+  }
 }/*# sourceMappingURL=about_me.css.map */

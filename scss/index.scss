@@ -64,9 +64,30 @@
   font-size: larger;
 }
 
-@media (width <= 420px){
+//  Mobile portrait mode
+@media ((320px <= width <= 450px) and (677px <= height <= 932px)){
   #grid-container{
-    grid-template-columns: repeat(2, 132px);
-    grid-template-rows: minmax(40px, auto) repeat(2, 220px);
+    grid-template-columns: repeat(2, 45vw);
+    grid-template-rows: minmax(40px, auto) repeat(2, 30vh);
+  }
+
+  .grid-elem{
+    >img{
+      width: 28vw;
+    }
+  }
+}
+
+//  Mobile landscape mode
+@media ((320px <= height <= 450px) and (677px <= width <= 932px)){
+  #grid-container{
+    grid-template-columns: repeat(2, 25vw);
+    grid-template-rows: minmax(40px, auto) repeat(2, 35vh);
+  }
+
+  .grid-elem{
+    >img{
+      width: 10vw;
+    }
   }
 }
