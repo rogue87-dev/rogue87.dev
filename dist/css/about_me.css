@@ -1,32 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap");
-* {
-  font-family: "Roboto", sans-serif;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  background: radial-gradient(at center top, #891617, rgba(0, 0, 0, 0)), radial-gradient(at center bottom, #680a7f, rgba(0, 0, 0, 0));
-  background-color: black;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.wrapper {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
+@import 'global.css';
 #profile-container {
   display: grid;
   grid-template-columns: 200px 200px;

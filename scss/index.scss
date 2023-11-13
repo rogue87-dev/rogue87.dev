@@ -1,4 +1,4 @@
-@import 'global', 'vars';
+@import 'vars', 'global.css';
 
 #grid-container{
   display: grid;
@@ -62,4 +62,11 @@
   left: $pos-x-y;
   bottom: $pos-x-y;
   font-size: larger;
+}
+
+@media (width <= 420px){
+  #grid-container{
+    grid-template-columns: repeat(2, 132px);
+    grid-template-rows: minmax(40px, auto) repeat(2, 220px);
+  }
 }
