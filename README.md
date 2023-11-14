@@ -14,7 +14,7 @@ Y = Yes
 
 | page\feature | Functional | Animates | Responsive |
 | :----------: | :--------: | :------: | :--------: |
-|     Home     |     Y     |    Y    |     Y     |
-|   About Me   |     M     |    M    |     M     |
+|     Home     |     Y     |    M    |     Y     |
+|   About Me   |     M     |    M    |     Y     |
 |   Journal    |     N     |    N    |     N     |
 |  Portfolio   |     N     |    N    |     N     |
