@@ -72,7 +72,7 @@
 @media screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #grid-container{
     grid-template-columns: repeat(2, 45vw);
-    grid-template-rows: minmax(6vh, auto) repeat(2, 30dvh);
+    grid-template-rows: minmax(5dvh, auto) repeat(2, 30dvh);
   }
 
   .grid-elem{
@@ -83,10 +83,10 @@
 }
 //((320px <= height <= 450px) and (677px <= width <= 932px))
 //  Mobile landscape mode
-@media screen and (min-width:600px) and (max-width:900px) and (orientation: landscape) {
+@media screen and (min-width:600px) and (max-width:950px) and (orientation: landscape) {
   #grid-container{
     grid-template-columns: repeat(2, 25vw);
-    grid-template-rows: minmax(12dvh, auto) repeat(2, 35dvh);
+    grid-template-rows: minmax(10dvh, auto) repeat(2, 38dvh);
   }
 
   .grid-elem{
