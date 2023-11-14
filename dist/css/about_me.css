@@ -81,25 +81,41 @@
 @media screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait) {
   #profile-container {
     grid-template-columns: repeat(2, 45vw);
-    grid-template-rows: auto 12vh;
-  }
-}
-@media screen and (min-width: 600px) and (max-width: 900px) and (orientation: landscape) {
-  #profile-container {
-    grid-template-columns: repeat(2, 23vw);
-    grid-template-rows: 77dvh 13dvh;
+    grid-template-rows: auto 14vh;
   }
   .profile-img {
-    width: 8vw;
-    height: 8vw;
+    width: 25vw;
+    height: 25vw;
+  }
+  .profile-desc > h2 {
+    margin: 0.4rem 15%;
+  }
+  .profile-desc > hr {
+    margin: 2vh 15%;
+  }
+  img {
+    width: 6vh;
+  }
+  .hobby > img {
+    width: 8vh;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 950px) and (orientation: landscape) {
+  #profile-container {
+    grid-template-columns: repeat(2, 23vw);
+    grid-template-rows: auto 13dvh;
+    gap: 2dvh;
+  }
+  .profile-img {
+    width: 8dvw;
+    height: 8dvw;
   }
   .profile-desc > p {
-    margin: 2px;
-    font-size: 1rem;
+    margin: 1px;
+    font-size: 0.8rem;
   }
   .profile-desc > hr:nth-child(2) {
-    display: none;
-    margin: 2vh 15%;
+    margin: 10px 15%;
   }
   .profile-desc > h2 {
     font-size: 20px;
