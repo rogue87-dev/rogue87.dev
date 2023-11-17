@@ -1,0 +1,163 @@
+@forward 'global';
+@import 'vars';
+
+#profile-container{
+  display: grid;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: auto 100px;
+  gap: 10px;
+  grid-template-areas: 
+  "profile-desc profile-desc"
+  "music games";
+
+  text-align: center;
+}
+
+.profile-desc{
+  grid-area: profile-desc;
+  display: flex;
+  flex-direction: column;
+
+  // text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  border: solid black;
+  box-shadow: black 3px 3px 6px 1px;
+  border-radius: 5px;
+
+  >p{
+    margin: 5px;
+    font-size: large;
+  }
+
+  >hr{
+    margin: 1em 15%;
+    border: solid black 2px;
+  }
+
+  >h2{
+    margin: 5px;
+  }
+}
+
+.profile-img{
+  align-self: center;
+  user-select: none;
+  
+  width: 120px;
+  height: 120px;
+
+  object-fit: cover;
+  border-radius: 60px;
+  border: 3px solid black;
+  margin-top: 0.5rem;
+}
+
+.links{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 0.5rem;
+}
+
+.hobby{
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  border: solid black;
+  border-radius: 5px;
+  box-shadow: black 3px 3px 6px 1px;
+  transition: 0.15s;
+}
+
+.hobby:hover{
+  box-shadow: black 5px 5px 10px 3px;
+  transform: translate(-2px, -2px);
+}
+
+.hobby:active{
+  box-shadow: black 1px 1px 1px 0px;
+  transform: translate(3px, 3px);
+}
+
+
+.hobby-desc{
+  font-weight: bold;
+  text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
+  position: absolute;
+  color: white;
+  bottom: 5%;
+  left: 5%;
+}
+
+//  Mobile portrait mode
+@media screen and (min-width: 320px) and (max-width: 480px) and (orientation: portrait){
+  #profile-container{
+    grid-template-columns: repeat(2, 45vw);
+    grid-template-rows: auto 14vh
+  }
+
+  .profile-img{
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .profile-desc{
+    >h2{
+      margin: 0.4rem 15%;
+    }
+
+    >hr{
+      margin: 2vh 15%;
+    }
+  }
+
+  img{
+    width: 6vh;
+  }
+
+  .hobby{
+    >img{
+      width: 8vh;
+    }
+  }
+}
+
+//  Mobile landscape mode
+@media screen and (min-width:600px) and (max-width:950px) and (orientation: landscape) {
+  #profile-container{
+    grid-template-columns: repeat(2, 23vw);
+    grid-template-rows: auto 13dvh;
+    gap: 2dvh;
+  }
+
+  .profile-img{
+    width: 8dvw;
+    height: 8dvw;
+  }
+  
+  .profile-desc{
+    >p{
+      margin: 1px;
+      font-size: 0.8rem;
+    }
+    
+    >hr:nth-child(2){
+      // display: none;
+      margin: 10px 15%;
+    }
+
+    >h2{
+      // display: none;
+      font-size: 20px;
+      margin: 0.4rem 15%;
+      margin-top: 0;
+    }
+  }
+
+  img{
+    width: 8vh;
+  }
+}

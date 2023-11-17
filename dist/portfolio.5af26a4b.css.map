@@ -1,0 +1,1 @@
+{"mappings":";;ACGA;;;;;;;;AAQA;;;;;AAKA;;;;;;;;;;;AAQA","sources":["src/scss/portfolio.scss","src/scss/_global.scss"],"sourcesContent":["@forward 'global';\r\n@import 'vars';",null],"names":[],"version":3,"file":"portfolio.5af26a4b.css.map","sourceRoot":"/__parcel_source_root/"}

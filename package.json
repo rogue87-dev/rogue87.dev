@@ -1,0 +1,19 @@
+{
+  "name": "rogue87.github.io",
+  "version": "1.0.0",
+  "description": "This is the code for my personal website.",
+  "source": "src/index.html",
+  "scripts": {
+    "dev":"parcel serve src/index.html",
+    "watch": "parcel watch",
+    "build": "parcel build"
+  },
+  "keywords": [],
+  "author": "rogue87",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.3",
+    "parcel": "^2.10.3",
+    "sass": "^1.69.5"
+  }
+}
