@@ -4,7 +4,7 @@
   "description": "This is the code for my personal website.",
   "source": "src/index.html",
   "scripts": {
-    "dev":"parcel serve src/index.html",
+    "dev": "parcel serve src/index.html",
     "watch": "parcel watch",
     "build": "parcel build"
   },

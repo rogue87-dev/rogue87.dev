@@ -581,28 +581,48 @@ const button = document.querySelector("#grid-container .grid-elem:nth-child(1)")
 button.addEventListener("click", ()=>(0, _typeWriterJs.write)(button, (0, _sentencesJs.pickSentence)(), 50));
 
 },{"./modules/TypeWriter.js":"1q4Gj","./modules/sentences.js":"jt1Z1"}],"1q4Gj":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+// export function write(elem = document.body ,text = 'lorem ipsum ler', speed = 50){
+//   elem.innerText = '';  //the html element you want to write text on. acts like a piece of paper.
+//   let pen = 0;  //this is the thing you use to write stuff on paper.
+//   function movePen(){
+//     if(pen < text.length){
+//       elem.textContent += text.charAt(pen);
+//       pen++;
+//     }
+//     const timeoutId = setTimeout(movePen, speed);
+//     console.log(`pen: ${pen}. text: ${text.length}`);
+//     if(pen === text.length){
+//       clearTimeout(timeoutId);
+//       console.log('test');
+//       return () => {console.log("end");};
+//     }
+//   }
+//   if(pen < text.length -1)  movePen();
+// }S
+/* better algorithm
+  speed: millisecond
+  text : string
+  elem : HTML Element
+*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "write", ()=>write);
-function write(elem = document.body, text = "lorem ipsum ler", speed = 50) {
-    elem.innerText = ""; //the html element you want to write text on. acts like a piece of paper.
-    let pen = 0; //this is the thing you use to write stuff on paper.
-    function movePen() {
-        if (pen < text.length) {
-            elem.textContent += text.charAt(pen);
-            pen++;
+let running = false;
+function write(elem = document.body, text = "lorem", speed = 50) {
+    if (running) return;
+    running = true;
+    console.log("running!");
+    elem.innerText = "";
+    let pen = 0;
+    const intervalId = setInterval(()=>{
+        elem.textContent += text.charAt(pen);
+        pen++;
+        if (pen >= text.length) {
+            clearInterval(intervalId);
+            console.log(`pen: ${pen}. text: ${text.length}`);
+            running = false;
+            console.log("no longer running");
         }
-        const timeoutId = setTimeout(movePen, speed);
-        console.log(`pen: ${pen}. text: ${text.length}`);
-        if (pen === text.length) {
-            clearTimeout(timeoutId);
-            console.log("test");
-            return ()=>{
-                console.log("end");
-            };
-        }
-    }
-    if (pen < text.length - 1) movePen();
+    }, speed);
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
@@ -644,7 +664,14 @@ const sentences = [
     "Clickity Clackity",
     "You ain't getting bored of this?",
     "Why not click the other buttons then?",
-    "booooring"
+    "booooring",
+    "This button doesn't do anything ya know?",
+    "hmmmm",
+    "yeah yeah keep pressing",
+    "done?",
+    "-_-",
+    "This isn't funny anymore",
+    "keep pressing that and I'll get rid of it!"
 ];
 function pickSentence() {
     const randNum = Math.round(Math.random() * (sentences.length - 1));

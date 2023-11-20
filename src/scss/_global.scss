@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap');
 
 *{
+  margin-top: 0;
   font-family: 'Roboto', sans-serif;
   color: white;
   text-decoration: none;
@@ -10,16 +11,16 @@
 }
 
 html, body{
-  height: 100%;
   margin: 0;
+  height: 100%;
 }
 
 body{
   background: radial-gradient(at center top, #891617, #00000000),
    radial-gradient(at center bottom, #680a7f, #00000000);
-  background-color: black;
-  background-size: cover;
-  background-attachment: fixed;
+   background-color: rgb(24, 24, 24);
+   background-size: cover;
+   background-attachment: fixed;
 }
 
 .wrapper{

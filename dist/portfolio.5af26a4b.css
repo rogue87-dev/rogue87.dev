@@ -3,6 +3,7 @@
 * {
   color: #fff;
   text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000;
+  margin-top: 0;
   font-family: Roboto, sans-serif;
   font-weight: bold;
   text-decoration: none;
@@ -14,7 +15,7 @@ html, body {
 }
 
 body {
-  background-color: #000;
+  background-color: #181818;
   background-image: radial-gradient(at top, #891617, #0000), radial-gradient(at bottom, #680a7f, #0000);
   background-position: 0 0, 0 0;
   background-repeat: repeat, repeat;
@@ -24,11 +25,60 @@ body {
   background-clip: border-box, border-box;
 }
 
-.wrapper {
+.wrapper, #content-box {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#content-box {
+  grid-template-rows: 90dvh;
+  grid-template-columns: 15vw 82vw;
+  gap: 15px;
+  display: grid;
+}
+
+#content-box > div {
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+#tree, #content {
+  background-color: #0000004d;
+  border: solid #000;
+  border-radius: 5px;
+  font-weight: normal;
+  overflow-y: scroll;
+  box-shadow: 3px 3px 6px 1px #000;
+}
+
+#tree::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+#content::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+#tree::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+#content::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+#tree::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+}
+
+#content::-webkit-scrollbar-thumb {
+  background-color: #1c1c1c;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=portfolio.5af26a4b.css.map */
