@@ -1,5 +1,9 @@
 @forward 'global';
 
+ul{
+  padding-left: 24px;
+}
+
 
 #content-box{
   @extend .wrapper;
@@ -38,4 +42,58 @@
     border-radius: 10px;
   }
 
+}
+
+.option{
+  cursor: pointer;
+  font-size: x-large;
+  margin: 20px 0 20px 0;
+
+  div{
+    display: flex;
+    align-items: center;
+
+    &:hover{  
+      color: #707070;
+    }
+
+  }
+
+  img{
+    width: 25px;
+  }
+
+  >.inner-list{
+    display: none;
+  }
+
+}
+
+.animate *{
+  transition: 0.25s;
+}
+
+.inner-list{
+  padding-left: 24px;
+  li{
+    margin: 5px;
+    font-weight: normal;
+    font-size: large;
+
+    &:hover{
+      color: #707070;
+    }
+  }
+}
+
+// for .option class
+.expanded{
+
+  img{
+    rotate: 90deg;
+  }
+
+  .inner-list{
+    display: inline-block;
+  }
 }

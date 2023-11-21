@@ -32,6 +32,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+ul {
+  padding-left: 24px;
+}
+
 #content-box {
   grid-template-rows: 90dvh;
   grid-template-columns: 15vw 82vw;
@@ -79,6 +83,55 @@ body {
 #content::-webkit-scrollbar-thumb {
   background-color: #1c1c1c;
   border-radius: 10px;
+}
+
+.option {
+  cursor: pointer;
+  margin: 20px 0;
+  font-size: x-large;
+}
+
+.option div {
+  align-items: center;
+  display: flex;
+}
+
+.option div:hover {
+  color: #707070;
+}
+
+.option img {
+  width: 25px;
+}
+
+.option > .inner-list {
+  display: none;
+}
+
+.animate * {
+  transition: all .25s;
+}
+
+.inner-list {
+  padding-left: 24px;
+}
+
+.inner-list li {
+  margin: 5px;
+  font-size: large;
+  font-weight: normal;
+}
+
+.inner-list li:hover {
+  color: #707070;
+}
+
+.expanded img {
+  rotate: 90deg;
+}
+
+.expanded .inner-list {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=portfolio.5af26a4b.css.map */
