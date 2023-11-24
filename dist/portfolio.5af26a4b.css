@@ -25,7 +25,7 @@ body {
   background-clip: border-box, border-box;
 }
 
-.wrapper, #content-box {
+.wrapper, #main-grid {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,19 +33,16 @@ body {
 }
 
 ul {
-  padding-left: 24px;
+  margin: 0;
+  padding: 0 0 0 15px;
+  list-style-type: none;
 }
 
-#content-box {
+#main-grid {
   grid-template-rows: 90dvh;
   grid-template-columns: 15vw 82vw;
   gap: 15px;
   display: grid;
-}
-
-#content-box > div {
-  padding-top: 5px;
-  padding-left: 5px;
 }
 
 #tree, #content {
@@ -53,7 +50,7 @@ ul {
   border: solid #000;
   border-radius: 5px;
   font-weight: normal;
-  overflow-y: scroll;
+  overflow: scroll;
   box-shadow: 3px 3px 6px 1px #000;
 }
 
@@ -76,13 +73,25 @@ ul {
 }
 
 #tree::-webkit-scrollbar-thumb {
-  background-color: #1c1c1c;
+  background-color: #2f2f2f;
   border-radius: 10px;
 }
 
 #content::-webkit-scrollbar-thumb {
-  background-color: #1c1c1c;
+  background-color: #2f2f2f;
   border-radius: 10px;
+}
+
+#content {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#content > embed {
+  width: 80vw;
+  height: 80vh;
 }
 
 .option {

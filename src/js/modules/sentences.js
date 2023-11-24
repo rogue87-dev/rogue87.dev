@@ -11,6 +11,7 @@ const sentences = [
   "-_-",
   "This isn't funny anymore",
   "keep pressing that and I'll get rid of it!",
+  "by the way this isn't a button it's actually a div"
 ];
 
 export function pickSentence(){

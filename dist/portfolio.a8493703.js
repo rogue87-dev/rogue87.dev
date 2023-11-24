@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"b3anl":[function(require,module,exports) {
+})({"1UrCN":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "ba60c367739bf03c";
+module.bundle.HMR_BUNDLE_ID = "c169f50ea8493703";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -574,55 +574,52 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"ebWYT":[function(require,module,exports) {
-var _typeWriterJs = require("./modules/TypeWriter.js");
-var _sentencesJs = require("./modules/Sentences.js");
-const button = document.querySelector("#grid-container .grid-elem:first-child");
-button.addEventListener("click", ()=>(0, _typeWriterJs.write)(button, (0, _sentencesJs.pickSentence)(), 40));
+},{}],"lamKG":[function(require,module,exports) {
+var _elemLoader = require("./modules/ElemLoader");
+// this is a temporary solution
+const content = [
+    `<figure style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 30px;
+    ">
+      <embed 
+        src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/710b3bc5-18e3-4dd0-8b62-0caa2f949722.svg"
+        style="
+        height: 90vh;
+        "
+      ></embed>
 
-},{"./modules/TypeWriter.js":"1q4Gj","./modules/Sentences.js":"6OF9h"}],"1q4Gj":[function(require,module,exports) {
-// export function write(elem = document.body ,text = 'lorem ipsum ler', speed = 50){
-//   elem.innerText = '';  //the html element you want to write text on. acts like a piece of paper.
-//   let pen = 0;  //this is the thing you use to write stuff on paper.
-//   function movePen(){
-//     if(pen < text.length){
-//       elem.textContent += text.charAt(pen);
-//       pen++;
-//     }
-//     const timeoutId = setTimeout(movePen, speed);
-//     console.log(`pen: ${pen}. text: ${text.length}`);
-//     if(pen === text.length){
-//       clearTimeout(timeoutId);
-//       console.log('test');
-//       return () => {console.log("end");};
-//     }
-//   }
-//   if(pen < text.length -1)  movePen();
-// }S
-/* better algorithm
-  speed: millisecond
-  text : string
-  elem : HTML Element
+      
+      <embed 
+        src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/6340235b-2147-4a46-b68d-fe158458162b.svg"
+        style="height: 80vh;"
+        >
+      </embed>
+
+    </figure>`
+];
+const options = [
+    dashboard = document.getElementById("dashboard")
+];
+dashboard.addEventListener("click", ()=>{
+    const elem = document.getElementById("content");
+    (0, _elemLoader.loadElem)(elem, content[0]);
+});
+
+},{"./modules/ElemLoader":"1vPJu"}],"1vPJu":[function(require,module,exports) {
+//This function loads html elements into the webpage
+/*
+  elem: where to load the content.
+  content: the content duh
 */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "write", ()=>write);
-let running = false;
-function write(elem = document.body, text = "lorem", speed = 50) {
-    if (running) return;
-    running = true;
-    console.log("running!");
-    elem.innerText = "";
-    let pen = 0;
-    const intervalId = setInterval(()=>{
-        elem.textContent += text.charAt(pen);
-        pen++;
-        if (pen >= text.length) {
-            clearInterval(intervalId);
-            console.log(`pen: ${pen}. text: ${text.length}`);
-            running = false;
-            console.log("no longer running");
-        }
-    }, speed);
+parcelHelpers.export(exports, "loadElem", ()=>loadElem);
+function loadElem(elem = document.body, content) {
+    elem.innerHTML = content;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
@@ -655,30 +652,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"6OF9h":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "pickSentence", ()=>pickSentence);
-const sentences = [
-    "Hello Stranger",
-    "Clickity Clackity",
-    "You ain't getting bored of this?",
-    "Why not click the other buttons then?",
-    "booooring",
-    "This button doesn't do anything ya know?",
-    "hmmmm",
-    "yeah yeah keep pressing",
-    "done?",
-    "-_-",
-    "This isn't funny anymore",
-    "keep pressing that and I'll get rid of it!",
-    "by the way this isn't a button it's actually a div"
-];
-function pickSentence() {
-    const randNum = Math.round(Math.random() * (sentences.length - 1));
-    return sentences[randNum];
-}
+},{}]},["1UrCN","lamKG"], "lamKG", "parcelRequired6f9")
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["b3anl","ebWYT"], "ebWYT", "parcelRequired6f9")
-
-//# sourceMappingURL=index.739bf03c.js.map
+//# sourceMappingURL=portfolio.a8493703.js.map

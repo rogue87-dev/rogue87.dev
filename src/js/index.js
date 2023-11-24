@@ -1,6 +1,6 @@
 import { write } from "./modules/TypeWriter.js";
-import {pickSentence} from "./modules/sentences.js"
+import { pickSentence } from "./modules/Sentences.js";
 
-const button = document.querySelector('#grid-container .grid-elem:nth-child(1)');
+const button = document.querySelector('#grid-container .grid-elem:first-child');
 
-button.addEventListener('click', () => write(button, pickSentence(), 50),);
+button.addEventListener('click', () => write(button, pickSentence(), 40),);
