@@ -16,6 +16,7 @@ ul{
 }
 
 #tree, #content{
+  user-select: none;
   overflow: scroll;
   font-weight: normal;
 
@@ -44,13 +45,16 @@ ul{
 #content{
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 
-  >embed{
-    height: 80vh;
-    width: 80vw;
+  img{
+    margin: 25px 0;
+    width: 50vw;
   }
+}
+
+#work-in-progress{
+  margin: auto;
 }
 
 
@@ -72,11 +76,6 @@ ul{
   img{
     width: 25px;
   }
-
-  >.inner-list{
-    display: none;
-  }
-
 }
 
 .animate *{
@@ -84,6 +83,7 @@ ul{
 }
 
 .inner-list{
+  // display: none;
   padding-left: 24px;
   li{
     margin: 5px;
@@ -94,16 +94,10 @@ ul{
       color: #707070;
     }
   }
-}
 
-// for .option class
-.expanded{
-
-  img{
-    rotate: 90deg;
-  }
-
-  .inner-list{
+  #{&}--expanded{
     display: inline-block;
+    background-color: red;
+    color: red;
   }
 }

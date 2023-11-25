@@ -1,35 +1,42 @@
-import { loadElem } from "./modules/ElemLoader";
+import dashboardHTML from "../content/dashboard.md";
+import skillsHTML from "../content/skills.md";
+import testimonialsHTML from "../content/testimonials.md";
 
-// this is a temporary solution
-const content = [
-  `<figure style="
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding-bottom: 30px;
-    ">
-      <embed 
-        src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/710b3bc5-18e3-4dd0-8b62-0caa2f949722.svg"
-        style="
-        height: 90vh;
-        "
-      ></embed>
+//yeeeaaaaahhh im gonna change that later.
+import FluentSCSS from "../content/projects/FluentSCSS.md";
+const projectsHTML = [FluentSCSS];
 
-      
-      <embed 
-        src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/6340235b-2147-4a46-b68d-fe158458162b.svg"
-        style="height: 80vh;"
-        >
-      </embed>
 
-    </figure>`,
-];
 
-const options = [dashboard = document.getElementById("dashboard")];
+const dashboard    = document.getElementById("dashboard");
+const skills       = document.getElementById("skills");
+const projects     = document.getElementById("projects");
+const testimonials = document.getElementById("testimonials");
+const content      = document.getElementById("content");
+
+// default
+content.innerHTML = dashboardHTML;
 
 dashboard.addEventListener("click", () => {
-  const elem = document.getElementById("content");
-  loadElem(elem, content[0]);
+  content.innerHTML = dashboardHTML;
+});
+
+skills.addEventListener("click", () => {
+  content.innerHTML = skillsHTML;
+});
+
+projects.addEventListener("click", () => {
+  const list = document.querySelector('.inner-list')
+  if(projects.classList.contains("expanded")){
+    projects.classList.remove("expanded")
+    list.classList.remove("inner-list--expanded");
+  }
+  else{
+    projects.classList.add("expanded")
+    list.classList.add("inner-list--expanded");
+  }
+});
+
+testimonials.addEventListener("click", () => {
+  content.innerHTML = testimonialsHTML;
 });

@@ -575,52 +575,50 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"lamKG":[function(require,module,exports) {
-var _elemLoader = require("./modules/ElemLoader");
-// this is a temporary solution
-const content = [
-    `<figure style="
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding-bottom: 30px;
-    ">
-      <embed 
-        src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/710b3bc5-18e3-4dd0-8b62-0caa2f949722.svg"
-        style="
-        height: 90vh;
-        "
-      ></embed>
-
-      
-      <embed 
-        src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/6340235b-2147-4a46-b68d-fe158458162b.svg"
-        style="height: 80vh;"
-        >
-      </embed>
-
-    </figure>`
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _dashboardMd = require("../content/dashboard.md");
+var _dashboardMdDefault = parcelHelpers.interopDefault(_dashboardMd);
+var _skillsMd = require("../content/skills.md");
+var _skillsMdDefault = parcelHelpers.interopDefault(_skillsMd);
+var _testimonialsMd = require("../content/testimonials.md");
+var _testimonialsMdDefault = parcelHelpers.interopDefault(_testimonialsMd);
+//yeeeaaaaahhh im gonna change that later.
+var _fluentSCSSMd = require("../content/projects/FluentSCSS.md");
+var _fluentSCSSMdDefault = parcelHelpers.interopDefault(_fluentSCSSMd);
+const projectsHTML = [
+    (0, _fluentSCSSMdDefault.default)
 ];
-const options = [
-    dashboard = document.getElementById("dashboard")
-];
+const dashboard = document.getElementById("dashboard");
+const skills = document.getElementById("skills");
+const projects = document.getElementById("projects");
+const testimonials = document.getElementById("testimonials");
+const content = document.getElementById("content");
+// default
+content.innerHTML = (0, _dashboardMdDefault.default);
 dashboard.addEventListener("click", ()=>{
-    const elem = document.getElementById("content");
-    (0, _elemLoader.loadElem)(elem, content[0]);
+    content.innerHTML = (0, _dashboardMdDefault.default);
+});
+skills.addEventListener("click", ()=>{
+    content.innerHTML = (0, _skillsMdDefault.default);
+});
+projects.addEventListener("click", ()=>{
+    const list = document.querySelector(".inner-list");
+    if (projects.classList.contains("expanded")) {
+        projects.classList.remove("expanded");
+        list.classList.remove("inner-list--expanded");
+    } else {
+        projects.classList.add("expanded");
+        list.classList.add("inner-list--expanded");
+    }
+});
+testimonials.addEventListener("click", ()=>{
+    content.innerHTML = (0, _testimonialsMdDefault.default);
 });
 
-},{"./modules/ElemLoader":"1vPJu"}],"1vPJu":[function(require,module,exports) {
-//This function loads html elements into the webpage
-/*
-  elem: where to load the content.
-  content: the content duh
-*/ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+},{"../content/dashboard.md":"4JXus","../content/skills.md":"k7VNW","../content/testimonials.md":"2fTqt","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../content/projects/FluentSCSS.md":"86Y4e"}],"4JXus":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "loadElem", ()=>loadElem);
-function loadElem(elem = document.body, content) {
-    elem.innerHTML = content;
-}
+exports.default = '<p><img src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/21526099-2aaf-4756-925a-a669a315b2bd.png" alt="Code Activity"></p>\n<p><img src="https://wakatime.com/share/@018ba21d-1073-4759-958b-3d1dc68c6943/138fa28a-b2f3-43d7-9dd6-bb8cf996b398.png" alt="Languages"></p>\n';
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -652,6 +650,21 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["1UrCN","lamKG"], "lamKG", "parcelRequired6f9")
+},{}],"k7VNW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = "<h1>Work in progress</h1>\n";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2fTqt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = "<h1>Work in progress</h1>\n";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"86Y4e":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+exports.default = "<h1>Work in progress</h1>\n";
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1UrCN","lamKG"], "lamKG", "parcelRequired6f9")
 
 //# sourceMappingURL=portfolio.a8493703.js.map

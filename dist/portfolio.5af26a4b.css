@@ -1,5 +1,4 @@
 @import "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap";
-@import "https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;700&display=swap";
 * {
   color: #fff;
   text-shadow: 1px 1px #000, -1px 1px #000, 1px -1px #000, -1px -1px #000;
@@ -7,6 +6,10 @@
   font-family: Roboto, sans-serif;
   font-weight: bold;
   text-decoration: none;
+}
+
+p {
+  font-weight: normal;
 }
 
 html, body {
@@ -46,6 +49,8 @@ ul {
 }
 
 #tree, #content {
+  -webkit-user-select: none;
+  user-select: none;
   background-color: #0000004d;
   border: solid #000;
   border-radius: 5px;
@@ -84,14 +89,17 @@ ul {
 
 #content {
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   display: flex;
 }
 
-#content > embed {
-  width: 80vw;
-  height: 80vh;
+#content img {
+  width: 50vw;
+  margin: 25px 0;
+}
+
+#work-in-progress {
+  margin: auto;
 }
 
 .option {
@@ -113,10 +121,6 @@ ul {
   width: 25px;
 }
 
-.option > .inner-list {
-  display: none;
-}
-
 .animate * {
   transition: all .25s;
 }
@@ -135,11 +139,9 @@ ul {
   color: #707070;
 }
 
-.expanded img {
-  rotate: 90deg;
-}
-
-.expanded .inner-list {
+.inner-list .inner-list--expanded {
+  color: red;
+  background-color: red;
   display: inline-block;
 }
 
