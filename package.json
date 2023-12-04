@@ -4,7 +4,7 @@
   "description": "This is the code for my personal website.",
   "source": "src/index.html",
   "scripts": {
-    "dev": "parcel serve src/index.html",
+    "dev-server": "parcel serve src/index.html",
     "watch": "parcel watch",
     "build": "parcel build"
   },
@@ -13,9 +13,14 @@
   "license": "ISC",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.10.3",
-    "marked": "^10.0.0",
     "parcel": "^2.10.3",
     "parcel-transformer-markdown": "^3.0.0",
     "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "marked": "^10.0.0",
+    "marked-custom-heading-id": "^2.0.5",
+    "marked-gfm-heading-id": "^3.1.1",
+    "marked-mangle": "^1.1.5"
   }
 }

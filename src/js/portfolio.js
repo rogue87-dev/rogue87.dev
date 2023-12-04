@@ -1,12 +1,21 @@
-import dashboardHTML from "../content/dashboard.md";
-import skillsHTML from "../content/skills.md";
-import testimonialsHTML from "../content/testimonials.md";
+import { marked } from "marked";
+import customHeadingId from "marked-custom-heading-id";
+//ya know, I really love marked.
+
+marked.use({
+  gfm: true,
+},customHeadingId());
+
+// markdown content
+import dashboardMD from "../content/dashboard.md";
+import skillsMD from "../content/skills.md";
+import testimonialsMD from "../content/testimonials.md";
 
 //yeeeaaaaahhh im gonna change that later.
 import FluentSCSS from "../content/projects/FluentSCSS.md";
-const projectsHTML = [FluentSCSS];
 
 
+const projectsMD = [FluentSCSS];
 
 const dashboard    = document.getElementById("dashboard");
 const skills       = document.getElementById("skills");
@@ -15,28 +24,22 @@ const testimonials = document.getElementById("testimonials");
 const content      = document.getElementById("content");
 
 // default
-content.innerHTML = dashboardHTML;
+content.innerHTML = marked(FluentSCSS);
 
 dashboard.addEventListener("click", () => {
-  content.innerHTML = dashboardHTML;
+  content.innerHTML = marked(dashboardMD);
 });
 
 skills.addEventListener("click", () => {
-  content.innerHTML = skillsHTML;
+  content.innerHTML = marked(`${skillsMD} {#work-in-progress}`);
 });
 
 projects.addEventListener("click", () => {
-  const list = document.querySelector('.inner-list')
-  if(projects.classList.contains("expanded")){
-    projects.classList.remove("expanded")
-    list.classList.remove("inner-list--expanded");
-  }
-  else{
-    projects.classList.add("expanded")
-    list.classList.add("inner-list--expanded");
-  }
+  const projectsList = document.getElementById('projects-list');
+  projectsList.classList.toggle("active");
 });
 
 testimonials.addEventListener("click", () => {
-  content.innerHTML = testimonialsHTML;
+  content.innerHTML = marked(`${testimonialsMD} {#work-in-progress}`);
 });
+

@@ -1,11 +1,57 @@
 @forward 'global';
 
+// basic elements
+
 ul{
   list-style-type: none;
   margin: 0;
   padding: 0 0 0 15px;
 }
 
+// class elements
+
+.option {
+  cursor: pointer;
+  font-size: x-large;
+  margin: 20px 0 20px 0;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      color: #707070;
+    }
+
+  }
+
+  img {
+    width: 25px;
+  }
+}
+
+.inner-list {
+  display: none;
+  padding-left: 24px;
+
+  li {
+    margin: 5px;
+    font-weight: normal;
+    font-size: large;
+
+    &:hover {
+      color: #707070;
+    }
+  }
+
+  #{&}--expanded {
+    display: inline-block;
+    background-color: red;
+    color: red;
+  }
+}
+
+// id elements
 
 #main-grid{
   @extend .wrapper;
@@ -53,51 +99,28 @@ ul{
   }
 }
 
-#work-in-progress{
+// elements used/added by javascript
+
+.active{
+
+  img{
+    rotate: 90deg;
+  }
+
+  > .inner-list{
+    display: inline-block;
+  }
+
+  
+}
+
+#work-in-progress {
   margin: auto;
 }
 
-
-.option{
-  cursor: pointer;
-  font-size: x-large;
-  margin: 20px 0 20px 0;
-
-  div{
-    display: flex;
-    align-items: center;
-
-    &:hover{  
-      color: #707070;
-    }
-
-  }
-
-  img{
-    width: 25px;
-  }
-}
-
+// animations
 .animate *{
   transition: 0.25s;
 }
 
-.inner-list{
-  // display: none;
-  padding-left: 24px;
-  li{
-    margin: 5px;
-    font-weight: normal;
-    font-size: large;
-
-    &:hover{
-      color: #707070;
-    }
-  }
-
-  #{&}--expanded{
-    display: inline-block;
-    background-color: red;
-    color: red;
-  }
-}
+/* man I'm bad at both css & scss lol */
